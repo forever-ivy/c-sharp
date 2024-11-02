@@ -19,6 +19,12 @@ for(int i=0;i<n-1;i++)
 
 //字典问题
 
+//求一个数每一位的数字
+int i,sum=0;
+int z=i%10;
+int i=i/10;
+sum+=z;
+
 //数组最大值
 n.max（）
 
@@ -31,6 +37,9 @@ n.max（）
 
 //char可以直接比较
 s[i] >= 'A' && s[i] <= 'Z'
+
+//字符串加字符
+string s.padleft(n,' ');
 
 //去重问题
 //留后面
