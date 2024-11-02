@@ -1,0 +1,106 @@
+//数组的输入问题
+int[] a = Array.ConvertAll(Console.ReadLine().Split(new char  [] {' ','!','?','*' ,','},StringSplitOptions.RemoveEmptyEntries), int .Parse);
+char[] a = Console.ReadLine().Replace(" ", "").ToCharArray();
+
+//数组内数据的输出
+Console.WriteLine(string.Join(" ", a));
+
+//冒泡排序
+n=string.length;
+for(int i=0;i<n-1;i++)
+{
+    for(int j=0;j<n-i-1;j++)
+   {
+          //顺序交换
+   }
+
+
+}
+
+//字典问题
+
+//数组最大值
+n.max（）
+
+//string类型可以直接提取单个不同位置的char，区别与数组
+ string a = Console.ReadLine();
+            for (int i = 0; i < a.Length; i++)
+            {
+                Console.WriteLine(a[i]);
+            }
+
+//char可以直接比较
+s[i] >= 'A' && s[i] <= 'Z'
+
+//去重问题
+//留后面
+string w;
+ n=w.length;
+string result="";
+for(int i=0;i<n;i++)
+{
+   int j
+    for(j=i+1;j<n;j++)
+    {
+        if(w[i]=w[j])
+          { 
+               break;
+          }
+     }
+    if(j==n)
+   {
+       result+=w[i]
+    }
+}
+//留前面
+string w;
+ n=w.length;
+string result="";
+for(int i=n-1;i>=0;i--)
+{
+   int j
+    for(j=i-1;j>=0;j--)
+    {
+        if(w[i]=w[j])
+          { 
+               break;
+          }
+     }
+    if(j==-1)
+   {
+       result=w[i]+result;
+    }
+}
+
+//对于n行n列的列表进行输入
+int n = int.Parse(Console.ReadLine());
+int[,] k = new int[n, n];
+            for(int i=0;i<n;i++)
+            {
+                int[] z = Array.ConvertAll(Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries), int.Parse);
+                ;
+                for (int j = 0; j < n; j++)
+                {
+                    k[i,j]=z[i];
+ 
+                }
+            }
+
+//矩形的列表则是在此基础上修改
+int[] num= Array.ConvertAll(Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries), int.Parse);
+            int m = num[0];
+            int n = num[1];
+            int[,] k = new int[m, n];
+            for(int i=0;i<m;i++)
+            {
+                int[] z = Array.ConvertAll(Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries), int.Parse);
+                ;
+                for (int j = 0; j < n; j++)
+                {
+                    k[i,j]=z[j];
+ 
+                }
+            }
+
+
+
