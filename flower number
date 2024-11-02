@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication11
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int start = int.Parse("1".PadRight(n, '0'));
+            int end = int.Parse("9".PadRight(n, '9'));
+            for (int i = start; i <= end; i++)
+            {
+                int sum2 = 0, num1 = i;
+                while (num1 != 0)
+                {
+                    int z = num1% 10;
+
+                    int sum = 1;
+                    for (int j = 1; j <= n; j++)
+                    {
+                        sum = sum * z;
+                    }
+
+                    num1= num1/10;
+                    sum2 += sum;
+
+                }
+                if (sum2 == i)
+                {
+                    Console.WriteLine(sum2);
+                }
+                
+            }
+           
+        }
+      
+    }
+}
