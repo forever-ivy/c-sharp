@@ -1,0 +1,61 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication12
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int n = int.Parse(Console.ReadLine());
+            int[,] s = new int[n, n];
+            for (int i = 0; i < n; i++)
+            {
+                int[] z = Array.ConvertAll(Console.ReadLine().Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries), int.Parse);
+                for (int j = 0; j < n; j++)
+                {
+                    s[i, j] = z[j];
+
+                }
+            }
+            int num = 0;
+            for (int i = 0; i < n; i++)
+            {
+
+                for (int j = 0; j < n; j++)
+                {
+                    int[] hang = new int[n];
+                    int[] lie = new int[n];
+                    for (int k = 0; k < n; k++)
+                    {
+                        hang[k] = s[i, k];
+                        
+                        lie[k] = s[k, j];
+                        
+
+                       
+                    }
+                    if (s[i, j] == hang.Max() && s[i, j] == lie.Min())
+                    {
+                        Console.WriteLine("({0},{1})", i, j);
+                        num++;
+                    }
+                   
+                    
+
+
+                }
+            }
+            if (num == 0)
+            {
+                Console.WriteLine("NONE");
+            }
+            
+
+
+
+        }
+    }
+}
