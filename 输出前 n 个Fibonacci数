@@ -1,0 +1,44 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication17
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            int t=int.Parse(Console.ReadLine());
+            if (t == 1)
+            {
+                Console.WriteLine("{0,11}",1);
+            }
+            else if (t == 2)
+            {
+                Console.WriteLine("{0,11}{1,11}",1,1);
+            }
+            else if (t < 1)
+            {
+                Console.WriteLine("Invalid.");
+            }
+
+            else if (t > 2)
+            {
+                string result = "          1          1";
+                int a = 1, b = 1;
+                Console.Write(result);
+                int c;
+                for (int j = 3; j <= t; j++)
+                {
+                    c = a + b;
+                    a = b;
+                    b = c;
+                    if (j % 5 != 0)
+                    {
+                        Console.Write("{0,11}", c);
+                    }
+                    else if (j % 5 == 0)
+                    {
+                        Console.WriteLine("{0,11}",c);
+                    }
