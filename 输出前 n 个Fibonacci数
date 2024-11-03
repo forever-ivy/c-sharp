@@ -42,3 +42,12 @@ namespace ConsoleApplication17
                     {
                         Console.WriteLine("{0,11}",c);
                     }
+
+                    
+                }
+                
+            }
+              
+        }
+    }
+}
