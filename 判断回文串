@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication17
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+              int i = int.Parse(Console.ReadLine());
+              for (int j = 1; j <= i; j++)
+              {
+                  string b = Console.ReadLine();
+                  int n = b.Length;
+                
+                  int q;
+                  for (q = 0; q < n / 2; q++)
+                  {
+                      if (b.Substring(q, 1) != b.Substring(n - q - 1, 1))
+                      {
+                          break;
+                      }
+
+
+                  }
+                  if (q == n / 2)
+                  {
+                      Console.WriteLine("Yes");
+                  }
+                  else if (q != n / 2)
+                  {
+                      Console.WriteLine("No");
+                  }
+              }
+        }
+    }
+}
