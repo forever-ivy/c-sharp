@@ -1,0 +1,35 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication6
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string n = Console.ReadLine();
+            int a = n.IndexOf(" ");
+            int m = int.Parse(n.Substring(0, a));
+            int k = int.Parse(n.Substring(a + 1));
+            int v1 = Math.Max(m, k);
+            int v2 = Math.Min(m, k);
+            int i = 1;
+            int c = 0;
+
+            while (i != 0)
+            {
+                i = v1 % v2;
+                v1 = v2;
+                v2 = i;
+
+            }
+            Console.WriteLine(v1+" "+(m*k)/v1);
+
+
+            
+        }
+
+    }
+}
