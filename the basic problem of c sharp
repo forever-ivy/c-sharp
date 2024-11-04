@@ -18,6 +18,8 @@ for(int i=0;i<n-1;i++)
 }
 
 //字典问题
+字母赋值：dic[s[i] - (int)'A']++;
+输出字母：string k=((char)((int)'A' + j)).ToString();   //(int j=0;j<26;j++)
 
 //求一个数每一位的数字
 int i,sum=0;
@@ -169,4 +171,4 @@ int[] n = Array.ConvertAll(Console.ReadLine().Split(new char[] { ' ' }, StringSp
 //一点关于数组中两个数的利用的经验之谈，在涉及此种情况时，我们不仅要写两个循环，控制i和j，同时需要中间变量k，以达到不同数组间运算的目的
 
 
-
+//
