@@ -1,0 +1,81 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication12
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            string s = "";
+            for (int i = 0; i < 4; i++)
+            {
+                s += Console.ReadLine();
+            }
+            int[] dic = new int[26];
+            int n = s.Length;
+            for (int i = 0; i < n; i++)
+            {
+                if (s[i] >= 'A' && s[i] <= 'Z')
+                {
+                    dic[s[i] - (int)'A']++;
+                }
+            }
+            int big = dic.Max();
+            string[,] chart = new string[big + 1, 26];
+            for (int i = 0; i <= big; i++)
+            {
+                for (int j = 0; j < 26; j++)
+                {
+                    if (i == big)
+                    {
+                        chart[i, j] = ((char)((int)'A' + j)).ToString();
+                    }
+                    else
+                    {
+                        chart[i, j] = " ";
+                    }
+
+                }
+
+            }
+
+
+            for (int j = 0; j < 26; j++)
+            {
+                for (int k = big - 1; k >= big - dic[j]; k--)
+                {
+                    chart[k, j] = "*";
+                }
+
+            }
+            for (int i = 0; i <=big; i++)
+            {
+                for (int j = 0; j < 26; j++)
+                {
+
+                    if (j == 25&&i!=big)
+                    {
+                        Console.WriteLine(chart[i, j] + " ");
+                    }
+                    else if(j<25)
+                    {
+                        Console.Write(chart[i, j]+" ");
+                    }
+                    else if (j == 25 && i == big)
+                    {
+                        Console.WriteLine(chart[i,j]);
+                    }
+                    
+
+                }
+
+
+            }
+        }
+
+
+    }
+}
