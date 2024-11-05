@@ -171,4 +171,60 @@ int[] n = Array.ConvertAll(Console.ReadLine().Split(new char[] { ' ' }, StringSp
 //一点关于数组中两个数的利用的经验之谈，在涉及此种情况时，我们不仅要写两个循环，控制i和j，同时需要中间变量k，以达到不同数组间运算的目的
 
 
-//自定义输出斐波那契数，详细代码参考问题；输出前n个Fibonacci数
+//自定义输出斐波那契数
+static double feibo(double n)
+        {
+            double z;
+            if (n == 1 || n == 2)
+            {
+                z = 1;
+                return z;
+            }
+
+            else
+            {
+                double a=1,b=1,t=0;
+                for (double j = 3; j <= n; j++)
+                {
+                    t = a + b;
+                    a = b;
+                    b = t;
+
+                }
+                return t;
+            }
+
+
+//自定义判断是否为素数
+static bool primenumber(double n)
+        {
+            
+            
+            if (n == 1)
+            {
+                return false;
+            }
+            int i;
+            for(i=2;i <=Math.Sqrt(n);i++)
+            {
+                if(n%i==0)
+                {
+                    break;
+                }
+            }
+            if(i==(int)Math.Sqrt(n)+1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+
+            }
+            
+           
+            }
+
+
+
+
