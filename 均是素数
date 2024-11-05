@@ -1,0 +1,78 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+namespace ConsoleApplication4
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            double[] mn = Array.ConvertAll(Console.ReadLine().Split(' '), double.Parse);
+            double m = mn[0];
+            double n = mn[1];
+            string qualified = "";
+            for (double k = m; k <= n; k++)
+            {
+                if (primenumber(k))
+                {
+                    qualified += k + " ";
+                }
+ 
+            }
+            double[] uqualified = Array.ConvertAll(qualified.Split(new char[] { ' ' }, StringSplitOptions.RemoveEmptyEntries), double.Parse);
+            double count = 0;
+                for (int i = 0; i <uqualified.Length ; i++)
+                {
+                    for (int j = i + 1; j <uqualified.Length; j++)
+                    {
+                        for (int q = j + 1; q<uqualified.Length; q++)
+                        {
+                            double r = uqualified[i];
+                            double p = uqualified[j];
+                            double t = uqualified[q];
+                            if (primenumber(r*p+t)&&primenumber(r*t+p)&&primenumber(p*t+r))
+                            {
+                                count++;
+                            }
+
+                        }
+                    }
+                }
+            Console.WriteLine(count);
+
+
+        }
+        static bool primenumber(double n)
+        {
+            
+            
+            if (n == 1)
+            {
+                return false;
+            }
+            int i;
+            for(i=2;i <=Math.Sqrt(n);i++)
+            {
+                if(n%i==0)
+                {
+                    break;
+                }
+            }
+            if(i==(int)Math.Sqrt(n)+1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+
+            }
+            
+           
+            }
+
+        }
+
+    }
