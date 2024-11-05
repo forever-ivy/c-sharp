@@ -171,4 +171,4 @@ int[] n = Array.ConvertAll(Console.ReadLine().Split(new char[] { ' ' }, StringSp
 //一点关于数组中两个数的利用的经验之谈，在涉及此种情况时，我们不仅要写两个循环，控制i和j，同时需要中间变量k，以达到不同数组间运算的目的
 
 
-//
+//自定义输出斐波那契数，详细代码参考问题；输出前n个Fibonacci数
