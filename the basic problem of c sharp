@@ -225,6 +225,20 @@ static bool primenumber(double n)
            
             }
 
+//数组中某个数的索引值
+ int[] numbers = { 1, 2, 3, 4, 5 };
+        int target = 3;
 
+        int index = Array.IndexOf(numbers, target);
 
+        if (index != -1)
+        {
+            Console.WriteLine($"元素 {target} 的索引是: {index}");
+        }
+        else
+        {
+            Console.WriteLine($"数组中没有找到元素 {target}");
+        }
+//数组中某个数最后一次出现的索引值
+把index改为lastindex
 
