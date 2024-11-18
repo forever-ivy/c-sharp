@@ -24,6 +24,84 @@ for(int i=0;i<n-1;i++)
 //字典问题
 字母赋值：dic[s[i] - (int)'A']++;
 输出字母：string k=((char)((int)'A' + j)).ToString();   //(int j=0;j<26;j++)
+//字典统计数字（provide by chatgpt4.0）
+using System;
+using System.Collections.Generic;
+
+namespace DictionaryCounting
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            // 输入分数列表
+            Console.WriteLine("请输入分数，按回车分隔：");
+            string input = Console.ReadLine(); // 获取输入的字符串
+            string[] scores = input.Split(); // 按空格分隔输入
+
+            // 创建一个字典来存储分数及其出现次数
+            Dictionary<string, int> scoreCount = new Dictionary<string, int>();
+
+            // 遍历每个分数进行计数
+            foreach (var score in scores)
+            {
+                if (scoreCount.ContainsKey(score))
+                {
+                    // 如果字典中已存在该分数，计数加1
+                    scoreCount[score]++;
+                }
+                else
+                {
+                    // 如果字典中没有该分数，添加新项，初始计数为1
+                    scoreCount[score] = 1;
+                }
+            }
+
+            // 输出计数结果
+            Console.WriteLine("分数\t出现次数");
+            foreach (var entry in scoreCount)
+            {
+                Console.WriteLine($"{entry.Key}\t{entry.Value}");
+            }
+        }
+    }
+}
+//字典统计字母
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        string input = Console.ReadLine(); // 输入一个字符串
+        Dictionary<char, int> letterCount = new Dictionary<char, int>();
+
+        foreach (char c in input)
+        {
+            if (c>='A'&&c<='Z') // 只统计字母，忽略其他字符
+            {
+                
+
+                // 如果字典中已包含该字母，更新其值；否则添加新键
+                if (letterCount.ContainsKey(c))
+                {
+                    letterCount[c]++;
+                }
+                else
+                {
+                    letterCount[c] = 1;
+                }
+            }
+        }
+
+        // 输出统计结果
+        foreach (var kvp in letterCount)
+        {
+            Console.WriteLine($"字母 '{kvp.Key}' 出现了 {kvp.Value} 次");
+        }
+    }
+}
 
 //求一个数每一位的数字
 int i,sum=0;
