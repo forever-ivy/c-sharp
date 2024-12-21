@@ -126,6 +126,23 @@ s[i] >= 'A' && s[i] <= 'Z'
 string s.padleft(n,' ');
 
 //去重问题
+//先冒泡排序重去重
+string s = Console.ReadLine();
+            int len = s.Length;
+            for (int i = 0; i < len - 1; i++)
+            {
+                for (int j = 0; j < len - i - 1; j++)
+                {
+                    if (s[j] > s[j + 1])
+                    {
+                        string z = s[j + 1].ToString() + s[j].ToString();
+                        s = s.Remove(j, 2);
+                        s = s.Insert(j, z);
+                    }
+                }
+            }
+            s = new string(s.Distinct().ToArray());
+            Console.WriteLine(s);
 //留后面
 string w;
  n=w.length;
