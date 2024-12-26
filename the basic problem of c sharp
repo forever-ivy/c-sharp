@@ -66,48 +66,27 @@ namespace DictionaryCounting
         }
     }
 }
-//字典统计字母
-using System;
-using System.Collections.Generic;
 
-class Program
-{
-    static void Main()
-    {
-        string input = Console.ReadLine(); // 输入一个字符串
-        Dictionary<char, int> letterCount = new Dictionary<char, int>();
-
-        foreach (char c in input)
-        {
-            if (c>='A'&&c<='Z') // 只统计字母，忽略其他字符
-            {
-                
-
-                // 如果字典中已包含该字母，更新其值；否则添加新键
-                if (letterCount.ContainsKey(c))
-                {
-                    letterCount[c]++;
-                }
-                else
-                {
-                    letterCount[c] = 1;
-                }
-            }
-        }
-
-        // 输出统计结果
-        foreach (var kvp in letterCount)
-        {
-            Console.WriteLine($"字母 '{kvp.Key}' 出现了 {kvp.Value} 次");
-        }
-    }
-}
 
 //求一个数每一位的数字
 int i,sum=0;
 int z=i%10;
 int i=i/10;
 sum+=z;
+
+//辗转相除法
+ int[] input = Array.ConvertAll(Console.ReadLine().Split(' '),int.Parse);
+            int num1 = input[0];
+            int num2 = input[1];
+            int a = num1;
+            int b = num2;
+            while (b!=0)
+            {
+                int temp =a%b;
+                a = b;
+                b = temp;
+            }
+            Console.WriteLine(a+" "+num1*num2/a);
 
 //数组最大值，一维数组
 n.max（）
@@ -326,7 +305,7 @@ static bool primenumber(double n)
 
 
 
-// 判断一个数字是否为素数
+// 判断一个数字是否为素数（更加高效）
         static bool IsPrime(int n)
         {
             if (n <= 1) return false;  // 1 或负数不是素数
