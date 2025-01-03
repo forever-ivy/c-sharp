@@ -20,6 +20,8 @@ for(int i=0;i<n-1;i++)
 
 
 }
+//array.sort(n)
+从小到大排列
 
 //字典问题
 字母赋值：dic[s[i] - (int)'A']++;
